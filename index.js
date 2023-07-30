@@ -1,11 +1,15 @@
-import GetCustomer from "./scenarios/Get-Customer.js";
+import GetContacts from "./scenarios/contacts.js";
+import GetNews from "./scenarios/news.js";
 import {group , sleep} from 'k6';
 
+export default() =>{
 
-export default () => {
-    group('Endpoint Get Customer - Controller Customer - OnionArchitecture.Api', () => {
-        GetCustomer();
-    });
+  group('Endpoint Get Contacts - API k6', () => {
+    GetContacts();
+  });
 
-    sleep(1);
+  group('Endpoint Get News - API k6', () => {
+    GetNews();
+ });
+
 }
